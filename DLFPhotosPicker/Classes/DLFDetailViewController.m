@@ -189,6 +189,13 @@ static NSString * const CellReuseIdentifier = @"photoCell";
 #pragma mark - Button
 
 - (void)didTapAllButton:(id)sender {
+    for (PHAsset *asset in self.assetsFetchResults) {
+        if (![self.selectionManager containsAsset:asset]) {
+            [self.selectionManager addSelectedAsset:asset];
+        }
+    }
+    [self.collectionView reloadData];
+    [self.nextButton setEnabled:YES];
 }
 
 - (void)didTapClearButton:(id)sender {
