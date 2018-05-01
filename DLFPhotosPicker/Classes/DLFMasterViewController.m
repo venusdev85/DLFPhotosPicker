@@ -45,7 +45,8 @@ static NSString * const CollectionSegue = @"showCollection";
         
         [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
         
-        self.title = NSLocalizedString(@"Albums", nil);
+        //        self.title = NSLocalizedString(@"Albums", nil);
+        self.title = @"";
         
         UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil) style:UIBarButtonItemStyleDone target:self action:@selector(didTapCancelButton:)];
         [self.navigationItem setLeftBarButtonItem:cancelButton];
@@ -61,6 +62,18 @@ static NSString * const CollectionSegue = @"showCollection";
 - (void)dealloc
 {
     [[PHPhotoLibrary sharedPhotoLibrary] unregisterChangeObserver:self];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.navigationItem.backBarButtonItem.title = NSLocalizedString(@"Albums", nil);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.navigationItem.backBarButtonItem.title = @"";
 }
 
 - (void)didTapCancelButton:(id)sender {
