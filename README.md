@@ -23,7 +23,8 @@ Try the sample app in your browser [here](https://appetize.io/app/rkaxakuky73h73
 How to use
 --
 
-- Use Cocoapods: `pod 'DLFPhotosPicker'` or copy all the files in `DLFPhotosPicker/Classes` folder to your project.
+- Use Cocoapods: `pod 'DLFPhotosPicker', :git => 'https://github.com/venusdev85/DLFPhotosPicker'` 
+- or copy all the files in `DLFPhotosPicker/Classes` folder to your project.
 - Present the `DLFPhotosPickerViewController`
 
 ```objc
@@ -70,17 +71,17 @@ Properties
 Screenshots
 --
 
-![](https://github.com/nicnocquee/DLFPhotosPicker/raw/master/screenshots/screenshot1.png)
+![](https://github.com/venusdev85/DLFPhotosPicker/raw/master/screenshots/screenshot1.png)
 
-![](https://github.com/nicnocquee/DLFPhotosPicker/raw/master/screenshots/screenshot2.png)
+![](https://github.com/venusdev85/DLFPhotosPicker/raw/master/screenshots/screenshot2.png)
 
-![](https://raw.githubusercontent.com/nicnocquee/DLFPhotosPicker/master/screenshots/screenshot3.png)
+![](https://raw.githubusercontent.com/venusdev85/DLFPhotosPicker/master/screenshots/screenshot3.png)
 
-![](https://github.com/nicnocquee/DLFPhotosPicker/raw/master/screenshots/screenshot4.png)
+![](https://github.com/venusdev85/DLFPhotosPicker/raw/master/screenshots/screenshot4.png)
 
 Author
 --
-Nico Prananta [@nicnocquee](http://twitter.com/nicnocquee)
+Jamal Mahfuz [@jamalmahfuz](https://www.linkedin.com/in/jamal-mahfuz-senior-developer/)
 
 If you use this library in your app, let me know :)
 
