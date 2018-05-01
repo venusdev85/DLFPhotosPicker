@@ -147,15 +147,17 @@ static NSString * const CellReuseIdentifier = @"photoCell";
     }
     
     if (multipleSelections) {
+        UIBarButtonItem *allButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"All", nil) style:UIBarButtonItemStylePlain target:self action:@selector(didTapAllButton:)];
+        
         UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Next", nil) style:UIBarButtonItemStyleDone target:self action:@selector(didTapNextButton:)];
+        [nextButton setEnabled:([[[DLFPhotosSelectionManager sharedManager] selectedAssets] count]>0)?YES:NO];
+        self.nextButton = nextButton;
+        
         UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
         [infoButton addTarget:self action:@selector(didTapHintButton:) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *hintButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-        UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-        spaceItem.width = 20;
-        [self.navigationItem setRightBarButtonItems:@[nextButton, spaceItem, hintButton]];
-        [nextButton setEnabled:([[[DLFPhotosSelectionManager sharedManager] selectedAssets] count]>0)?YES:NO];
-        self.nextButton = nextButton;
+        
+        [self.navigationItem setRightBarButtonItems:@[nextButton, allButton, hintButton]];
     }
 }
 
@@ -185,6 +187,9 @@ static NSString * const CellReuseIdentifier = @"photoCell";
 }
 
 #pragma mark - Button
+
+- (void)didTapAllButton:(id)sender {
+}
 
 - (void)didTapClearButton:(id)sender {
     [self.selectionManager removeAllAssets];
