@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@import Photos;
+#import <Photos/Photos.h>
+
 @class DLFDetailViewController;
 @class DLFMasterViewController;
 @class DLFPhotoCell;
